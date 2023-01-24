@@ -19,6 +19,8 @@ export const getUser = (req, res, next): void => {
 
 	try {
 		const user = database.getUser(req.user);
+		console.log(user);
+		
 		if (!user) {
 			const statusError = new StatusError('User not found', 404);
 			return next(statusError);
